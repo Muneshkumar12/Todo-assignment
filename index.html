@@ -5,131 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
-    ">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.css">
     <style>
-        #row-1{
-            padding: 10px;
-            background-color: rgb(40, 36, 36);
+        #container{
+            min-height: 100vh;
+            background-color: aquamarine;
         }
-        #header{
+        #todo{
+            font-size: 20px;
+            border-radius: 5px;
+            background-color: rgb(223, 223, 223);
+            
+        }
+        #delallbutton{
+            border: none;
+            background:none;
+            border: 1px black solid;
+            border-radius: 10px;
+            background-color: red;
+            margin-top: 10px;
+        }
+        #dataSection{
+            border: 1px rgb(173, 170, 170) solid;
+            margin-top: 20px;
+            background-color:white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        #getdata{
             display: flex;
-            flex-direction: row;
-            align-items: center;
             justify-content: space-between;
         }
-        #header>h3{
-            color: white;
+        #input{
+            width: 100%;
+            border-radius: 5px;
         }
-        #header>button{
-            color: white;
+        #submit{
+            border: none;
+            border-radius: 0px 5px 5px 0px;
             background-color: blue;
             height: 30px;
-            width: 80px;
-            border: none;
-            border-radius: 10px;
         }
-        #row-2{
-            padding-top: 50px;
+        #error{
+            display: none;
+            color: red;
         }
-        .section-2-data{
-            border: 1px gray solid;
-            border-radius: 10px;
-            padding: 0px 5px 5px 5px;
+        #success{
+            display: none;
+            color: green;
         }
-        .todos{
-            padding: 10px;
-            margin-bottom: 10px;
+        #editicon{
+            background-color: green;
+            height: 30px;
+            width: 30px;
             border-radius: 5px;
-            background-color: rgb(179, 175, 175) ;
+            padding: 5px;
         }
-        .search{
+        #deleteicon{
+            background-color: red;
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #userdata{
             display: flex;
             justify-content: space-between;
+            background-color: rgb(223, 223, 223);
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: 10px;
         }
-        .search>input{
-           width: 100%;
-        }
-        .search>button{
-            background-color: blue;
+        #editbutton{
             border: none;
-            border-radius: 0px 10px 10px 0px;
+            background:none;
         }
-       .section-3{
-        margin-top: 10px;
-       }
-        .img-1{
-        background-color: green;
-        border-radius: 5px;
-        padding: 5px 10px;
-        width: 40px;
-        height: 30px;
-        margin-right: 10px;
-       }
-        .img-2{
-        background-color: red;
-        border-radius: 5px;
-        padding: 5px 10px;
-        width: 40px;
-        height: 30px;
-        margin-right: 10px;
-       }
-       .section-3-data{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        border: 1px gray solid;
-        border-radius: 5px;
-        padding: 10px;
-        background-color: rgb(193, 187, 187);
-       }
-       .section-3-data>div>input{
-        margin-right: 10px;
-       }
+        #delbutton{
+            border: none;
+            background:none;
+        }
     </style>
 </head>
 <body>
-    <div class="container-fluid" id="main">
-    <!-- row 1st --> 
-    <div class="row" id="row-1">
-            <div id="header"> 
-                 <h3>admin</h3> 
-                 <button>logout</button> 
-             </div>
+
+    <div id="container" class="container-fluid">
+        <div class="row" id="row"></div>
     </div>
-    <div class="row" id="row-2">
-         <div class="col"></div> 
-        <div class="col-5 section-2-data">
-              <div class="todos">Todod(5)</div> 
-            <div class="search"><input type="search"><button>submit</button></div> 
-            <div class="section-3"> 
-               <div class="section-3-data">
-                <div><input type="checkbox" checked><span>Walk the dog</span></div>
-                <div>
-                    <img src="./pages/images/edit.png" alt="" class="img-1"><img src="./pages/images/delete.png" alt="" class="img-2">
-                </div>
-            </div> 
-
-
-
-               <div class="section-3-data">
-                <div><input type="checkbox" checked><span>authenticate with passport-js</span></div>
-                <div><img src="./pages/images/edit.png" alt="" class="img-1"><img src="./pages/images/delete.png" alt="" class="img-2"></div>
-              </div>
-               <div class="section-3-data">
-                <div><input type="checkbox" checked><span>validate register inpput</span></div>
-                <div><img src="./pages/images/edit.png" alt="" class="img-1"><img src="./pages/images/delete.png" alt="" class="img-2"></div>
-              </div> 
-               <div class="section-3-data"><div><input type="checkbox"><span>create raddit website</span></div><div><img src="./pages/images/edit.png" alt="" class="img-1"><img src="./pages/images/delete.png" alt="" class="img-2"></div></div>
-               <div class="section-3-data"><div><input type="checkbox"><span>store sessions on mongodp</span></div><div><img src="./pages/images/edit.png" alt="" class="img-1"><img src="./pages/images/delete.png" alt="" class="img-2"></div></div>
-            </div>
-        </div>
-        <div class="col"></div>
-    </div>
-   </div> 
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-   <script src="./pages/index.js"></script>
+   <script src="./bootstrap/bootstrap.js"></script>
+   <script src="./js/index.js"></script>
 </body>
 </html>

@@ -92,7 +92,7 @@ function submit(){
           })
           //delet todo
           deleteButton.addEventListener("click", function(){
-            userData.innerHTML = "";
+            userData.style.display = "none";
           } )
     }
 }
